@@ -39,7 +39,7 @@ class ValidateCategoryData extends FormRequest
             'product' => 'required',         
             'category_name' =>'required',
             'image' => 'required',     
-            'price' => 'required',                       
+            'price' => 'required|numeric',                       
         ];
     }
    
@@ -47,7 +47,7 @@ class ValidateCategoryData extends FormRequest
     public function messages()
     {
         return [
-              'product' => 'plese select product',
+            'product' => 'plese select product',
             'category_name' => 'The product_name field is required',
             'price' =>'Please enter price',
             'image' => 'Please select image',                                      

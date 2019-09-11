@@ -24,3 +24,11 @@ complated feature
 6.  Blade with atleast one control statement -- done
 7.  Migrations & Seeder -- done 
 
+
+
+ for use config variavble  -- config('app.baseurl')
+
+ credentail --
+
+ admin@gmail.com / admin   --- run first seeder
+

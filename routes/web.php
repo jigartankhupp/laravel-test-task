@@ -27,7 +27,8 @@ Route::get('dashboard','UserController@dashboard');
 Route::get('logout','UserController@userLogout');
 
 Route::get('product/list','ProductController@productList');
-
+Route::get('category/list','CategoryController@categoryList');
+Route::get('product/detail/{id}','ProductController@getProductInfo');
 
 //============ IN THAT VERIFY IS ADMIN   ======= //
 
@@ -41,6 +42,10 @@ Route::group(['middleware' =>['VerifyIsAdmin']],function(){
 
 	Route::get('category/add','CategoryController@addCategory');
 	Route::post('category/store','CategoryController@storeCategory');
+	Route::get('category/edit/{id}','CategoryController@getCategory');
+	Route::post('category/update/{id}','CategoryController@updateCategory');
+	Route::get('category/delete/{id}','CategoryController@deleteCategory');
+
 
 });
 

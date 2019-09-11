@@ -37,7 +37,7 @@ class ProductController extends Controller
     	return view('product.addproduct',compact('productData'));
 
     }
-    public function updateProduct(Requests $request,$id)
+    public function updateProduct(Request $request,$id)
     {    	
     	$productData = $this->model->updateProduct($request,$id);
     	return redirect('product/list');    	
@@ -48,5 +48,11 @@ class ProductController extends Controller
     	$productData = $this->model->deleteProduct($id);
 
     	return redirect('product/list');
+    }
+    public function getProductInfo($id)
+    {
+        $productData =Product::find($id); 
+        $categoryData = $this->model->getAllCategoryInfo($id);
+       return view('product.detailview',compact('productData','categoryData'));
     }
 }

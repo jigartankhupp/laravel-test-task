@@ -38,6 +38,11 @@ class User extends Authenticatable
     ];
 
 
+     /**
+     * User will we signup
+     *     
+     * @return request - all parameter for user
+     */
     public function createUser($request)
     {
         $name = $request->name;

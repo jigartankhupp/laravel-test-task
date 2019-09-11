@@ -26,6 +26,7 @@
                <thead>   
                    <tr>
                   <th>@lang('msg.Name')</th>
+                  <th>@lang('msg.CreatedAt')</th>
                   <th class="action_title">@lang('msg.Edit')</th>
                   <th class="action_title">@lang('msg.Delete')</th>
                </tr>
@@ -34,7 +35,8 @@
                  
                  @foreach($productData as $data)
                   <tr>
-                        <td>{{$data->product_name}} </td>
+                        <td><a href="{{ URL('/product/detail/'.$data->id )}}"> {{$data->product_name}} </a> </td>
+                        <td>{{$data->created_at}} </td>
                         <td>                     
                         <a href="{{ URL('/product/edit/'.$data->id )}}"> 
                           <button class="btn btn-default" type="button" >@lang('msg.Edit')

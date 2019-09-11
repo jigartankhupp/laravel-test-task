@@ -1,19 +1,19 @@
 @extends('master.app')
-<title>@lang('msg.allProduct')</title>
+<title>@lang('msg.allCategory')</title>
 @section('content')
 <div class="main-panel">
 <div class="content-wrapper">
 
-  	<div class="container allproduct-list">
+  	<div class="container allcategory-list">
       <div class="card-body">
          <div class="col-sm-12">
             <div class="row card-body-margin">
                <div class="col-sm-6">
-                  <h4 class="card-title">@lang('msg.Product')</h4>
+                  <h4 class="card-title">@lang('msg.Category')</h4>
                </div>
                <div class="col-sm-6 add_product">
-                    <a class="card-title float-right validation_btn" href="{{ url('product/add') }}">
-                  <span class="btn" >+ @lang('msg.Add Product')</span>
+                    <a class="card-title float-right validation_btn" href="{{ url('category/add') }}">
+                  <span class="btn" >+ @lang('msg.Add Category')</span>
                   </a>
                </div>
             </div>
@@ -21,7 +21,7 @@
          
         <div class="col-sm-12">
          <div class="table-responsive">
-          @if(count($productData) > 0)            
+          @if(count($categoryData) > 0)            
             <table id="order-listing" class="table">
                <thead>   
                    <tr>
@@ -32,17 +32,17 @@
                </thead>               
                <tbody>
                  
-                 @foreach($productData as $data)
+                 @foreach($categoryData as $data)
                   <tr>
-                        <td>{{$data->product_name}} </td>
+                        <td>{{$data->category_name}} </td>
                         <td>                     
-                        <a href="{{ URL('/product/edit/'.$data->id )}}"> 
+                        <a href="{{ URL('/category/edit/'.$data->id )}}"> 
                           <button class="btn btn-default" type="button" >@lang('msg.Edit')
                           </button>   
                         </a>                                      
                         </td>
                         <td>   
-                        <a href="{{ URL('/product/delete/'.$data->id )}}">                   
+                        <a href="{{ URL('/category/delete/'.$data->id )}}">                   
                           <button class="btn btn-default" type="button" >@lang('msg.Delete')<span class="caret"></span>
                           </button>
                         </a>                                         
@@ -54,7 +54,7 @@
          @else
               <h4 style="text-align:center;">@lang('msg.Empty Data')</h4>
          @endif   
-         <div class="float-right">{{ $productData->links() }}</div>
+         <div class="float-right">{{ $categoryData->links() }}</div>
          </div>
          </div>
       </div>

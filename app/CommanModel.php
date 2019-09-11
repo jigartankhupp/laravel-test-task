@@ -10,7 +10,7 @@ class CommanModel extends Model
 {
     
     public function VerifyIsAdmin()
-    {
+    {   
     	$userRole = Auth::user()->role;
     	if($userRole =='admin')
     	{
